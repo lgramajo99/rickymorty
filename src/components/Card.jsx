@@ -1,4 +1,4 @@
-export default function Card({ gender, image, name, onClose, species }) {
+function Card({ gender, image, name, onClose, species }) {
    return (
 
       <div>
@@ -10,3 +10,5 @@ export default function Card({ gender, image, name, onClose, species }) {
       </div>
    );
 }
+
+export default Card;

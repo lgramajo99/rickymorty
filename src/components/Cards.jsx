@@ -1,6 +1,7 @@
 import Card from './Card';
 
-function Cards({ characters }) {
+function Cards({ characters, onClose }) {
+   
    return (
       <div>
          {characters.map(({ id, name, species, gender, image }) => {
@@ -10,10 +11,9 @@ function Cards({ characters }) {
                species={species}
                gender={gender}
                image={image}
-               onClose={() => window.alert('Se cerro la card')}
+               onClose={() => onClose(id)}
             />
-         }
-         )}
+         })}
       </div>
    );
 }
