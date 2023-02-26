@@ -1,7 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import Cards from './components/Cards.jsx'
-import Nav from './components/Nav'
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import About from './components/About.jsx'
+import Cards from './components/Cards.jsx';
+import Detail from './components/Detail.jsx';
+import Error from './components/Error.jsx'
+import Nav from './components/Nav.jsx';
+
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -12,17 +17,12 @@ function App() {
       .then((data) => {
         if (data.name) {
           const characterExists = characters.find((char) => char.id === data.id);
-          if (characterExists) {
-            window.alert('Este personaje ya está en la lista.');
-          } else {
-            setCharacters((oldChars) => [...oldChars, data]);
-          }
-        } else {
-          window.alert('No hay personajes con ese ID');
+          if (characterExists) { window.alert('Este personaje ya está en la lista.'); }
+          else { setCharacters((oldChars) => [...oldChars, data]); }
         }
+        else { window.alert('No hay personajes con ese ID'); }
       });
   };
-
 
   const randomCharacter = () => {
     const randomId = Math.floor(Math.random() * 826) + 1;
@@ -40,14 +40,26 @@ function App() {
 
   return (
     <div className='App'>
+
       <Nav
         onSearch={onSearch}
         randomCharacter={randomCharacter}
       />
-      <Cards
-        characters={characters}
-        onClose={onClose}
-      />
+
+      <Routes>
+        <Route
+          path='/home'
+          element={
+            <Cards
+              characters={characters}
+              onClose={onClose}
+            />} />
+
+        <Route path='/about' element={<About />} />
+        <Route path='/detail/:detailId' element={<Detail />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+
     </div>
   )
 }
