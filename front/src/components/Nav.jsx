@@ -6,8 +6,8 @@ function Nav({ onSearch, randomCharacter }) {
 
     return (
         <div>
-            <button onClick={randomCharacter} >🎈</button>
             <SearchBar onSearch={onSearch} />
+            <button onClick={randomCharacter}>🎲</button>
         </div>
     )
 }
