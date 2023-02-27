@@ -5,6 +5,7 @@ import About from './components/About.jsx'
 import Cards from './components/Cards.jsx';
 import Detail from './components/Detail.jsx';
 import Error from './components/Error.jsx'
+import Favorites from './components/Favorites';
 import Form from './components/Form/Form';
 import Nav from './components/Nav.jsx';
 
@@ -31,11 +32,11 @@ function App() {
     const accessStored = localStorage.getItem('access');
     if (accessStored) {
       setAccess(true);
-      navigate('/home');
+      // navigate('/home');
     } else {
       navigate('/');
     }
-  }, [access, navigate]);
+  }, [navigate]);
 
   const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -78,6 +79,7 @@ function App() {
         <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
         <Route path='/about' element={<About />} />
         <Route path='/detail/:detailId' element={<Detail />} />
+        <Route path='/favorites' element={<Favorites />} />
         <Route path='*' element={<Error />} />
       </Routes>
 

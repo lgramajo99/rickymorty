@@ -7,6 +7,7 @@ function Nav({ logout, onSearch, randomCharacter }) {
         <div>
             <nav>
                 <NavLink to={'/home'}>Home</NavLink>
+                <NavLink to={'/favorites'}>Favorites</NavLink>
                 <NavLink to={'/about'}>About me</NavLink>
                 < SearchBar onSearch={onSearch} />
                 <button onClick={randomCharacter}>🎲</button>
