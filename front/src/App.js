@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
-import About from './components/About.jsx'
-import Cards from './components/Cards.jsx';
-import Detail from './components/Detail.jsx';
-import Error from './components/Error.jsx'
-import Favorites from './components/Favorites';
+import About from './components/About/About.jsx'
+import Cards from './components/Cards/Cards.jsx';
+import Detail from './components/Detail/Detail.jsx';
+import Error from './components/Error/Error.jsx'
+import Favorites from './components/Favorites/Favorites';
 import Form from './components/Form/Form';
-import Nav from './components/Nav.jsx';
+import Nav from './components/Nav/Nav.jsx';
 
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [access, setAccess] = useState(false);
 
   const navigate = useNavigate();

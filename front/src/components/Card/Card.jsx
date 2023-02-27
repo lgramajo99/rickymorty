@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
-import { addFavorite, deleteFavorite } from '../redux/actions'
+import { addFavorite, deleteFavorite } from '../../redux/actions'
 
 function Card({ id, gender, image, name, onClose, species }) {
    const dispatch = useDispatch()

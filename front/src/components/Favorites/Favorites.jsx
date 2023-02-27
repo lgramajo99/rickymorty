@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { orderCards, filterCards } from "../redux/actions";
+import { orderCards, filterCards } from "../../redux/actions";
 
 const Favorites = () => {
     const { myFavorites } = useSelector(state => state)
