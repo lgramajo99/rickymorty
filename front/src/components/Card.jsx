@@ -24,7 +24,7 @@ function Card({ id, gender, image, name, onClose, species }) {
             setIsFav(true);
          }
       });
-   }, [myFavorites]);
+   }, [id, myFavorites]);
 
 
 
