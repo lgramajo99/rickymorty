@@ -1,0 +1,91 @@
+.favContenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .favContenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .favContenedor {
+        grid-template-columns: 1fr;
+    }
+}
+
+.selectFav {
+    margin: 20px auto;
+    
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+}
+
+.optionFav {
+    font-weight: bold;
+    color: #444;
+}
+
+.CardContenedor {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.CardContenedor:hover {
+    transform: scale(1.05);
+}
+
+.h3Fav {
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+}
+
+.linkFav {
+    text-decoration: none;
+}
+
+.imgFav {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.selectFav,
+.optionFav {
+    display: block;
+    width: 30%;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    text-align-last: center;
+}
+
+.selectFav:focus,
+.optionFav:focus {
+    outline: none;
+}
+
+.selectFav option {
+    font-size: 1rem;
+    color: #444;
+}

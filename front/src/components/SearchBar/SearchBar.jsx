@@ -8,7 +8,6 @@ function SearchBar({ onSearch }) {
       setCharacter(e.target.value)
    }
 
-
    return (
       <div className={style.searchBarContenedor}>
          <input className={style.inputSearch} type='search' value={character} onChange={handleChange} />
